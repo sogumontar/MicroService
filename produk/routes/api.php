@@ -16,3 +16,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::POST('/create','ProdukController@create')->name('create');
+Route::GET('/create','ProdukController@tt')->name('lihat');

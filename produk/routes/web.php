@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::POST('home','HomeController@test')->name('test');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::POST('/welcome','ProdukController@create')->name('create');
