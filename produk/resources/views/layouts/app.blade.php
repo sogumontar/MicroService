@@ -49,8 +49,11 @@
                                 </li>
                             @endif
                         @else
+                         <li >
+                                <a class="nav-link " href="{{Route('tt')}}">Lihat Record</a>
+                            </li>
                             <li >
-                                <a class="nav-link " href="{{Route('lihat')}}">Lihat Data</a>
+                                <a class="nav-link " href="{{Route('lihats')}}">Lihat Data</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

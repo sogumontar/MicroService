@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Produk(localhost8002)</div>
 
                 <div class="card-body">
                     @if (session('status'))     
@@ -17,7 +17,7 @@
                     <form method="post" enctype="multipart/form-data" action="{{route('create')}}">
 
                         <input type="text" name="nama" placeholder="Nama Produk" class="form-control" name=""><br>
-                        <textarea id="txtarea" name="deskripsi" placeholder="Deskripsi" class="form-control"></textarea>
+                        <textarea id="txtarea" name="deksripsi" placeholder="Deskripsi" class="form-control"></textarea>
                         <br>
                         <input style="margin-left: 0px; width: 100px;" name="harga" width="50px;" type="number" min="0" step="1" placeholder="harga" class="form-control"  name="">
                         <br>
