@@ -14,7 +14,7 @@ $contacts=json_decode($json,true);
              <th>No</th>
              <th>No KTP</th>
              <th>Nama</th>
-             <th>Tanggal Daftar</th>   
+             <th>Tanggal Daftar</th>    
              <th>Aksi</th>   
              <?php 
              $no=0;
@@ -39,7 +39,7 @@ $contacts=json_decode($json,true);
                 <td valign="top">
                     <?php echo $harga ?>
                 </td>
-                <td><a href="route{{}}"><button class="btn btn-primary">Order</button></a></td>
+                <td><a href="{{route('order',[$id,$nama,$deksripsi,$harga])}}"><button class="btn btn-primary">Order</button></a></td>
             </tr>
             <?php
         }

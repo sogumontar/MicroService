@@ -19,8 +19,10 @@ class ProdukController extends Controller
     public function tt(){
         
         $t=Produk::all();
-        // return view();
-        return view('lihat',compact('t'));
+        //Untuk MicroService
+        return ($t);
+        //Untuk Monolith
+        // return view('lihat',compact('t'));
     
     }
 

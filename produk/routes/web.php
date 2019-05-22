@@ -24,3 +24,5 @@ Route::get('/lihat','ProdukController@tt')->name('lihats');
 Route::get('/trans/{id}','ProdukController@trans')->name('trans');
 Route::POST('transs/{id}','TransaksiController@create')->name('crea');
 Route::get('/transaction','TransaksiController@test')->name('tt');
+Route::GET('transsac/{id}','TransaksiController@approve')->name('appr');
+Route::GET('transsacs/{id}','TransaksiController@decline')->name('deny');

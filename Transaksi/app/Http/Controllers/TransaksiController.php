@@ -22,9 +22,22 @@ class TransaksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+      public function create(request $request,$id,$harga,$desk,$nama)
+    {   
+        transaksi::create([
+            'id_produk'=>$id,
+            'id_akun'=>Auth::user()->id,
+            'nama'=>$nama,
+            'deskripsi'=>$desk,
+            'harga'=>$harga,
+            'status'=>0,
+            'stok'=>request('jumlah'),
+
+        ]);
+
+
+        return view('transaction',compact('t'));
+
     }
 
     /**
@@ -81,5 +94,13 @@ class TransaksiController extends Controller
     public function destroy(transaksi $transaksi)
     {
         //
+    }
+    public function order($id,$nama,$desk,$harga){
+
+        return view('order',compact('id','nama','desk','harga'));
+
+    }
+    public function orderProcess(){
+        return view('order');
     }
 }

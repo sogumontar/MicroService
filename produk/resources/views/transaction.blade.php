@@ -10,13 +10,15 @@
              <th>No</th>
              <th>Nama</th>
              <th>deskripsi</th>
-             <th>Harga</th>   
+             <th>Harga</th>
+             <th>Aksi</th>   
              <th>Aksi</th>  
                <?php 
              $no=0;
-             foreach($t as $contact)
+             echo $no;
+             foreach($t as $tt)
              {
-             	echo "asd";
+                echo "del";
                 $no++;
                 
                ?>
@@ -25,16 +27,23 @@
                     <?php echo $no ?>
                 </td>
                 <td valign="top">
-                    <?php echo $contact['nama']; ?>
+                    <?php echo $tt->nama; ?>
                 </td>
                 <td valign="top">
-                    <?php echo $contact['deskripsi']; ?>
+                    <?php echo $tt->deskripsi; ?>
                 </td>
 
                 <td valign="top">
-                    <?php echo $contact['harga']; ?>
+                    <?php echo $tt->harga; ?>
                 </td>
-               
+                <?php if(Auth::user()->email=='hendrasimz92@gmail.com'){?>
+                <td>
+                    <a href=""><button class="btn btn-success">Approve</button></a>
+                </td>
+                <td>
+                    <a href=""><button class="btn btn-danger">Decline</button></a>
+                </td>
+               <?php  }?>
             </tr>
             <?php
         }

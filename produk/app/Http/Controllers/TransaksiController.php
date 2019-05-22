@@ -44,8 +44,8 @@ class TransaksiController extends Controller
 
         ]);
 
-       
-        return view('transaction',compact('t'));
+        return ($rr);
+        // return view('transaction',compact('t'));
 
     }
 
@@ -71,10 +71,12 @@ class TransaksiController extends Controller
         //
     }
     public function test(){
-        
-         $t=produk::find(Auth::user()->id);
-        return view('transaction',compact('t'));
-    }
+
+       // $t=produk::find(Auth::user()->id);
+        // die();
+        $t=transaksi::all()->where("status",0 and "id_bookers",Auth::user()->id);
+       return view('transaction',compact('t'));
+   }
 
     /**
      * Show the form for editing the specified resource.
@@ -109,4 +111,23 @@ class TransaksiController extends Controller
     {
         //
     }
+    public function approve($id){
+      $t=produk::find(Auth::user()->id);
+      $trans=transaksi::find($id);
+      $trans->update([
+        'status'=>1,
+    ]);
+      return view('transaction',compact('t'));
+
+  }
+  public function decline($id){
+  
+    $t=produk::find(Auth::user()->id);
+      $trans=transaksi::find($id);
+      $trans->update([
+        'status'=>2,
+    ]);
+      return view('transaction',compact('t'));
+
+  }
 }
